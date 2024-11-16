@@ -355,155 +355,64 @@ var shelf4Front = [
 
 ]
 
+var appleTV = [
+    
+]
+
+var movieContainers = [
+    shelf1Back,
+    shelf1Front,
+    shelf2Back,
+    shelf2Front,
+    shelf3Back,
+    shelf3Front,
+    shelf4Back,
+    shelf4Front,
+    appleTV
+]
+
+var locationTags = [
+    " - back of 1st shelf",
+    " - front of 1st shelf",
+    " - back of 2nd shelf",
+    " - front of 2nd shelf",
+    " - back of 3rd shelf",
+    " - front of 3rd shelf",
+    " - back of 4th shelf",
+    " - front of 4th shelf",
+    " - Apple TV"
+]
+
 var numMovies = shelf1Back.length + shelf1Front.length + shelf2Back.length + shelf2Front.length + shelf3Back.length + shelf3Front.length + shelf4Back.length + shelf4Front.length;
-console.log(numMovies);
+console.log(numMovies + " movies total");
 
-for (let i = 0; i < shelf1Back.length; i++) {
-    const container = document.getElementById('back-shelf1');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf1Back[i];
-    container.appendChild(movie);
-    console.log(movie.id);
+var movieDisplay = document.getElementById('id-display');
+var resultsNumDisplay = document.getElementById('results-number');
+var input = document.getElementById('movie-input');
+input.addEventListener("input", function(event) {
+    movieDisplay.innerHTML = '';
+    var search = event.target.value.toLowerCase();
 
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
+    for (let i = 0; i < movieContainers.length; i++) {
+        for (let j = 0; j < movieContainers[i].length; j++) {
+            console.log(movieContainers[i][j]);
+            if (movieContainers[i][j].toLowerCase().includes(search)) {
+                var result = document.createElement('div');
+                result.innerHTML = "<b>" + movieContainers[i][j] + "</b>" + locationTags[i];
+                result.classList.add('search-result');
+                movieDisplay.appendChild(result);
+            }
+        }
+    }
+    
+    if (search === '') {
+        movieDisplay.innerHTML = '';
+    }
 
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
+    var numResults = movieDisplay.querySelectorAll("div").length;
+    resultsNumDisplay.innerHTML = "<b>" + numResults + " Results</b>";
 
-console.log("");
-
-for (let i = 0; i < shelf1Front.length; i++) {
-    const container = document.getElementById('front-shelf1');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf1Front[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf2Back.length; i++) {
-    const container = document.getElementById('back-shelf2');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf2Back[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf2Front.length; i++) {
-    const container = document.getElementById('front-shelf2');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf2Front[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf3Back.length; i++) {
-    const container = document.getElementById('back-shelf3');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf3Back[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf3Front.length; i++) {
-    const container = document.getElementById('front-shelf3');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf3Front[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf4Back.length; i++) {
-    const container = document.getElementById('back-shelf4');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf4Back[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
-
-console.log("");
-
-for (let i = 0; i < shelf4Front.length; i++) {
-    const container = document.getElementById('front-shelf4');
-    const movie = document.createElement('div');
-    movie.classList.add('movie');
-    movie.id = shelf4Front[i];
-    container.appendChild(movie);
-    console.log(movie.id);
-
-    movie.addEventListener('mouseover', () => {
-        document.getElementById('id-display').textContent = `${movie.id}`;
-    });
-
-    movie.addEventListener('mouseout', () => {
-        //document.getElementById('id-display').textContent = '';
-    });
-}
+    if (search === '') {
+        resultsNumDisplay.innerHTML = '';
+    }
+});
