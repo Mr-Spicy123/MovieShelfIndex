@@ -356,7 +356,7 @@ var shelf4Front = [
 ]
 
 var appleTV = [
-    
+
 ]
 
 var movieContainers = [
@@ -372,15 +372,15 @@ var movieContainers = [
 ]
 
 var locationTags = [
-    " - back of 1st shelf",
-    " - front of 1st shelf",
-    " - back of 2nd shelf",
-    " - front of 2nd shelf",
-    " - back of 3rd shelf",
-    " - front of 3rd shelf",
-    " - back of 4th shelf",
-    " - front of 4th shelf",
-    " - Apple TV"
+    "back of 1st shelf",
+    "front of 1st shelf",
+    "back of 2nd shelf",
+    "front of 2nd shelf",
+    "back of 3rd shelf",
+    "front of 3rd shelf",
+    "back of 4th shelf",
+    "front of 4th shelf",
+    "Apple TV"
 ]
 
 var numMovies = shelf1Back.length + shelf1Front.length + shelf2Back.length + shelf2Front.length + shelf3Back.length + shelf3Front.length + shelf4Back.length + shelf4Front.length;
@@ -398,8 +398,15 @@ input.addEventListener("input", function(event) {
             console.log(movieContainers[i][j]);
             if (movieContainers[i][j].toLowerCase().includes(search)) {
                 var result = document.createElement('div');
-                result.innerHTML = "<b>" + movieContainers[i][j] + "</b>" + locationTags[i];
                 result.classList.add('search-result');
+                var resultTitle = document.createElement('div');
+                resultTitle.classList.add('result-title');
+                resultTitle.innerHTML = "<b>" + movieContainers[i][j] + "</b>";
+                result.appendChild(resultTitle);
+                var resultsLocation = document.createElement('div');
+                resultsLocation.classList.add('results-location');
+                resultsLocation.innerHTML = locationTags[i];
+                result.appendChild(resultsLocation);
                 movieDisplay.appendChild(result);
             }
         }
@@ -409,7 +416,7 @@ input.addEventListener("input", function(event) {
         movieDisplay.innerHTML = '';
     }
 
-    var numResults = movieDisplay.querySelectorAll("div").length;
+    var numResults = movieDisplay.querySelectorAll("div").length/3;
     resultsNumDisplay.innerHTML = "<b>" + numResults + " Results</b>";
 
     if (search === '') {

@@ -1,48 +1,72 @@
-.body {
-    background: rgb(255, 255, 255);
+body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color:  rgb(41, 41, 41);
 }
 
 .page-title {
+    color: rgb(255, 255, 255);
     text-align: center;
-    font-family: sans-serif;
+    font-family: Helvetica;
     margin-top: 5vh;
     font-size: 4vw;
 }
 
+.sub-title {
+    color: rgb(157, 156, 156);
+    text-align: center;
+    font-family: Helvetica;
+    margin-top: 12vh;
+    font-size: 2.5vw;
+}
+
 .input {
-    margin-top: 10vw;
+    margin-top: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .movie-input {
-    width: 40vw;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    width: 30vw;
     height: 5vh;
     font-family: sans-serif;
-    font-size: 3vw;
+    font-size: 2.4vw;
+    border-radius: 7px;
 }
 
 #id-display {
-    margin-top: 5vh;
+    color: white;
+    margin-top: 7vh;
     font-family: sans-serif;
     font-size: 1.5vw;
     text-align: center;
+
 }
 
 #results-number {
-    margin-top: 5vh;
+    color: rgb(82, 80, 80);
+    margin-top: 10vh;
     font-family: sans-serif;
-    font-size: 2.3vw;
+    font-size: 2.8vw;
     text-align: center;
 }
 
-.search-result {
-    margin-bottom: 2vh;
+.result-title {
+    font-size: 2.5vw;
 }
+
+.results-location {
+    color: rgb(172, 172, 172);
+}
+
+.search-result {
+    margin-bottom: 5vh;
+}
+
