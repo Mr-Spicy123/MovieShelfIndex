@@ -47,7 +47,6 @@ body {
     font-family: sans-serif;
     font-size: 1.5vw;
     text-align: center;
-
 }
 
 #results-number {
@@ -68,5 +67,46 @@ body {
 
 .search-result {
     margin-bottom: 5vh;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        margin-top: 5vh;
+        font-size: 7vw;
+    }
+
+    .sub-title {
+        margin-top: 7vh;
+        font-size: 4vw;
+    }
+
+    .input {
+        margin-top: 6vw;
+    }
+
+    .movie-input {
+        width: 50vw;
+        height: 5vh;
+        font-size: 4.7vw;
+    }
+
+    #id-display {
+        margin-top: 5vh;
+        font-size: 4vw;
+    }
+
+    #results-number {
+        margin-top: 8vh;
+        font-size: 4.5vw;
+    }
+
+    .result-title {
+        font-size: 4vw;
+    }
+    
+    .search-result {
+        margin-bottom: 4vh;
+    }
+
 }
 
