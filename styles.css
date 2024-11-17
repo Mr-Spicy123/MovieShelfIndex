@@ -71,10 +71,6 @@ body {
 
 @media (max-width: 768px) {
 
-    body {
-        background-color: blue;
-    }
-    
     .page-title {
         margin-top: 5vh;
         font-size: 7vw;
