@@ -24,6 +24,25 @@ body {
     font-size: 2.5vw;
 }
 
+.feature-option-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30vw;
+    margin-top: 15vh;
+}
+
+.feature-option {
+    width: 30vw;
+    height: 7vh;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2.3vw;
+}
+
 .input {
     margin-top: 3vw;
     display: flex;

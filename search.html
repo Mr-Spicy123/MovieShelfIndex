@@ -12,12 +12,15 @@
         <b>Movie Checker</b>
     </div>
     <div class="sub-title">
-        <b>Choose an option</b>
+        <b>Search for a movie</b>
     </div>
-    <div class="feature-option-container">
-        <button class="feature-option" onclick="search()"><b>Search for a movie</b></button>
-        <button class="feature-option" onclick="filter()"><b>Filter through index</b></button>
+    <div class="input">
+        <input class="movie-input" id="movie-input" type="text" autocomplete="off" placeholder="Enter title here">
     </div>
-    <script src="index.js"></script>
+    <div id="results-number">
+    </div>
+    <div id="id-display">
+    </div>
+    <script src="search.js"></script>
 </body>
 </html>
